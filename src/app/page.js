@@ -18,7 +18,7 @@ function Counter() {
       <p>Текущее значение: {count}</p>
       <button onClick={() => setCount(count + 1)}>Увеличить</button>
       <button onClick={() => setCount(count - 1)}>Уменьшить</button>
-      <button onClick={() => setCount(0)}>Сбросить</button>
+      <button onClick={() => setCount(0)}>Renew</button>
     </div>
   );
 }
