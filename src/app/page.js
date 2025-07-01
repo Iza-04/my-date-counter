@@ -12,6 +12,7 @@ export default function App() {
 
 function Counter() {
   const [count, setCount] = useState(0);
+  const [step, setStep] = useState(1);
 
   const date = new Date("june 21 2027");
   date.setDate(date.getDate() + count);
@@ -20,9 +21,17 @@ function Counter() {
     <div>
       <div>
         {/* <p>Текущее значение: {count}</p> */}
-        <button onClick={() => setCount((c) => c - 1)}>-</button>
+        <button onClick={() => setCount((c) => c - step)}>-</button>
         <span>Count: {count}</span>
-        <button onClick={() => setCount((c) => c + 1)}>+</button>
+        <button onClick={() => setCount((c) => c + step)}>+</button>
+        {/* <button onClick={() => setCount(0)}>Renew</button> */}
+      </div>
+
+      <div>
+        {/* <p>Текущее значение: {count}</p> */}
+        <button onClick={() => setStep((c) => c - 1)}>-</button>
+        <span>Step: {step}</span>
+        <button onClick={() => setStep((c) => c + 1)}>+</button>
         {/* <button onClick={() => setCount(0)}>Renew</button> */}
       </div>
       <p>
@@ -31,7 +40,7 @@ function Counter() {
             ? "Today is "
             : count > 0
             ? `${count} days from today is`
-            : `${count} days ago were `}
+            : `${Math.abs(count)} days ago were `}
         </span>
         <span>{date.toDateString()}</span>
       </p>
